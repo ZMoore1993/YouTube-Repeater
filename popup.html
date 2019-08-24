@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			button {
+				height: 45px;
+				width: 90px;
+				outline: none;
+			}
+		</style>
+		
+		<script src="repeater.js"></script>
+	</head>
+	<body>
+		<input type="text" id ="searchText" value="Enter video embed link here" required style="width:300px">
+		<p id="error" style="color:red"></p>
+		<button type="submit" id="submit">Start Video</button>
+		<br /><br />
+		<iframe id="player" width="320" height="210" frameborder="0" allowfullscreen></iframe>
+	</body>
+</html>
