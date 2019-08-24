@@ -5,11 +5,12 @@ window.onload=function() {
 function clicked() {
 	var emb = document.getElementById("searchText").value;
 	var obj = document.getElementById("player");
+	var err = document.getElementById("error");
 	if (emb.includes("Enter video embed link here") || !emb.includes("youtube.com")) {
-		document.getElementById("error").innerHTML = "Invalid URL";
+		err.innerHTML = "Invalid URL";
 		return;
 	}
-	document.getElementById("error").innerHTML = "";
+	err.innerHTML = "";
 	if (emb.includes("watch")) {
 		emb = emb.replace("watch?v=","embed/");
 	}
@@ -17,8 +18,8 @@ function clicked() {
 		emb = emb.replace("http","https");
 	}
 	var id = emb.substring(30);
-	var loop = emb.concat("?version=3&autoplay=1&loop=1&playlist=");
+	var loop = emb.concat("?autoplay=1&playlist=");
 	loop = loop.concat(id);
+	loop = loop.concat("&loop=1");
 	obj.src = loop;
-	obj.play()
 }
